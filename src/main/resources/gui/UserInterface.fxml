@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserInterfaceController">
+    <children>
+        <BorderPane prefHeight="300.0" prefWidth="411.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <GridPane fx:id="grdPnTrackField" gridLinesVisible="true" onDragDetected="#onDragDetectedTrackField" onDragOver="#onDragOverTrackField" onMouseClicked="#onMouseClickedTrackField" style="-fx-border-color: #ccc;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </center>
+            <right>
+                <BorderPane BorderPane.alignment="CENTER">
+                    <top>
+                        <VBox prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label text="Information">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Separator prefWidth="200.0" />
+                                <Label fx:id="lblPlayersInfo">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </top>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </BorderPane>
+            </right>
+            <top>
+                <MenuBar prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Game">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmStartNewRace" text="Start New Race" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmNewTrack" text="New Track" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmLoadTrack" text="Load a Track" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmSaveCurrentTrack" text="Save Current Track" />
+                                <MenuItem fx:id="mnItmReplayGame" disable="true" mnemonicParsing="false" onAction="#onClickMnItmReplayGame" text="Replay the Game" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmQuit" text="Quit" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Settings">
+                            <items>
+                                <Menu mnemonicParsing="false" text="Replay and Animation Speed">
+                                    <items>
+                                        <Menu mnemonicParsing="false" text="Replay">
+                                            <items>
+                                                <SeparatorMenuItem mnemonicParsing="false">
+                                                    <content>
+                                                        <Label fx:id="lblReplayCurrentSpeed" text="Value: 1">
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </content>
+                                                </SeparatorMenuItem>
+                                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmReplaySpeedIncrease" text="Increase" />
+                                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmReplaySpeedDecrease" text="Decrease" />
+                                            </items>
+                                        </Menu>
+                                        <Menu mnemonicParsing="false" text="Animation">
+                                            <items>
+                                                <SeparatorMenuItem mnemonicParsing="false">
+                                                    <content>
+                                                        <Label fx:id="lblAnimationCurrentSpeed" text="Value: 1">
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </content>
+                                                </SeparatorMenuItem>
+                                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAnimationSpeedIncrease" text="Increase" />
+                                                <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAnimationSpeedDecrease" text="Decrese" />
+                                            </items>
+                                        </Menu>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Add Row">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAddRowTop" text="Top" />
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAddRowBottom" text="Bottom" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Remove Row">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmRemoveRowTop" text="Top" />
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmRemoveRowBottom" text="Bottom" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Add Column">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAddColumnLeft" text="Left" />
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmAddColumnRight" text="Right" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Remove Column">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmRemoveColumnLeft" text="Left" />
+                                        <MenuItem mnemonicParsing="false" onAction="#onClickMnItmRemoveColumnRight" text="Right" />
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
